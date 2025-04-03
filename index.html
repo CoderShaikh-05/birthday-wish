@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Aman</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #121212;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .countdown {
+            font-size: 5rem;
+        }
+        .hidden {
+            display: none;
+        }
+        .btn {
+            background: #1e90ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .cake img {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="countdownPage" class="container">
+        <div class="countdown" id="countdown">3</div>
+    </div><div id="cakePage" class="container hidden">
+    <h1>Happy Birthday Aman 🎉🥳</h1>
+    <div class="cake">
+        <img src="https://i.imgur.com/3z2w5O5.png" alt="Cake with Candle" id="candle">
+    </div>
+    <button class="btn" onclick="blowCandle()">Blow Candle</button>
+</div>
+
+<div id="wishPage" class="container hidden">
+    <img src="YOUR_FRIEND_IMAGE_URL" alt="Aman's Pic" style="width: 200px; border-radius: 50%;">
+    <h2>May your birthday be filled with lots of joy, love and laughter. Wishing you all the success in your medical journey⚕️🩺🎉</h2>
+    <p>"Happiest Birthday to the most amazing, handsome, hot, charming, awesome, lovely, and sweetest person ever! ✨ You are truly one of a kind, and I’m so lucky to have a friend like you. May your day be as fantastic and wonderful as you are! Stay happy, stay blessed, and keep shining like the star you are! ⭐💖"</p>
+    <p>"Dear I just want to say that you are really special to me. Even though we are far apart, you have always been an amazing friend! Wishing you all the happiness in the world.☺️"</p>
+    <button class="btn" onclick="showMessagePage()">View Message</button>
+</div>
+
+<div id="messagePage" class="container hidden">
+    <h2>Happy Birthday, [Meri jaan]! 🎉</h2>
+    <p>Ek aur saal bada hone ki khushi ya dukh? Ye Aap decide karlo! But honestly, you're very cool person.</p>
+    <p>Aapku 5-6yrs se jaanti hoon, par baat karna sirf January se start ki, aur abhi tak soch rahi hoon ki pehle kyu nahi kari ki? Slow start but better late than never , right? 😜</p>
+    <p>Aap genuinely ek amazing person hai ek rare combo– hardworking bhi, chill bhi aur ek perfect balance maintain karne wale aur ek acche dost bhi bas aise hi mast rehna.</p>
+    <p>Aap ke birthday pe bas yahi wish karungi ki jo bhi aapke life goals hai, wo pura ho jaye. Aap ki MBBS journey successful rahe, aur aap ek super doctor bane and aapki jo bhi wish hai wo puri ho jaye, and also bless with happiness and love.</p>
+    <h3>"Happy Birthday once again, Dear"🎂🎉</h3>
+</div>
+
+<script>
+    let countdown = 3;
+    let countdownInterval = setInterval(() => {
+        countdown--;
+        document.getElementById('countdown').innerText = countdown;
+        if (countdown === 0) {
+            clearInterval(countdownInterval);
+            document.getElementById('countdownPage').classList.add('hidden');
+            document.getElementById('cakePage').classList.remove('hidden');
+        }
+    }, 1000);
+    
+    function blowCandle() {
+        document.getElementById('candle').src = 'https://i.imgur.com/2dP3Tfs.png';
+        setTimeout(() => {
+            document.getElementById('cakePage').classList.add('hidden');
+            document.getElementById('wishPage').classList.remove('hidden');
+        }, 2000);
+    }
+    
+    function showMessagePage() {
+        document.getElementById('wishPage').classList.add('hidden');
+        document.getElementById('messagePage').classList.remove('hidden');
+    }
+</script>
+
+</body>
+</html>
